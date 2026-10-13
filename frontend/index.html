@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101326" />
+  <title>PocketSmart AI — Plan smarter</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">✦</span><span>PocketSmart <b>AI</b></span></a>
+    <nav><a href="#planners">Planners</a><a href="#how">How it works</a></nav>
+    <div class="auth-actions" id="authActions">
+      <button class="btn btn-quiet" id="openLogin">Log in</button>
+      <button class="btn btn-primary" id="openRegister">Get started <span>↗</span></button>
+    </div>
+    <div class="user-actions hidden" id="userActions"><span id="welcomeText"></span><button class="btn btn-quiet" id="logoutBtn">Log out</button></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> YOUR PERSONAL AI PLANNING ASSISTANT</div>
+        <h1>Big ideas.<br/><span class="gradient-text">Pocket-sized plans.</span></h1>
+        <p>Turn your ideas into clear, practical plans for your home, party, or personal style — without blowing your budget.</p>
+        <div class="hero-actions"><a class="btn btn-primary btn-large" href="#planners">Explore planners <span>↓</span></a><button class="btn btn-outline btn-large" id="heroStart">Create a free account</button></div>
+        <div class="trust-row"><span>✦ Budget-aware ideas</span><span>✦ Saved plan history</span><span>✦ AI + demo fallback</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="glass-card main-glass"><div class="sparkle">✦</div><div class="mini-label">YOUR NEXT GREAT IDEA</div><h3>Made for your life.</h3><p>Smart suggestions, shaped around your budget.</p><div class="progress-line"><span></span></div><div class="glass-foot"><span>Personalized</span><span>● Ready to plan</span></div></div>
+        <div class="float-chip chip-one"><span class="chip-icon purple">⌂</span><span><b>Home refresh</b><small>Budget-friendly</small></span></div>
+        <div class="float-chip chip-two"><span class="chip-icon orange">✷</span><span><b>Party planner</b><small>Less stress, more fun</small></span></div>
+        <div class="float-chip chip-three"><span class="chip-icon mint">◇</span><span><b>Style ideas</b><small>Personalized picks</small></span></div>
+      </div>
+    </section>
+    <section class="section" id="planners">
+      <div class="section-heading"><div><div class="eyebrow">ONE SMARTER STARTING POINT</div><h2>What are we planning today?</h2></div><p>Choose a planner and tell us what you have in mind.</p></div>
+      <div class="planner-grid">
+        <article class="planner-card home-card"><div class="card-top"><span class="planner-icon">⌂</span><span class="tag">SPACE & COMFORT</span></div><h3>Home Interior</h3><p>Make your room feel new with ideas that fit your space and spending limit.</p><ul><li>Room-by-room ideas</li><li>Style and color suggestions</li><li>Budget breakdown</li></ul><button class="card-link" data-planner="home">Plan my space <span>↗</span></button></article>
+        <article class="planner-card party-card"><div class="card-top"><span class="planner-icon">✷</span><span class="tag">CELEBRATE BETTER</span></div><h3>Party Planner</h3><p>Build a celebration plan with a theme, checklist, food ideas, and costs.</p><ul><li>Theme and decoration ideas</li><li>Food and activity list</li><li>Simple timeline</li></ul><button class="card-link" data-planner="party">Plan my party <span>↗</span></button></article>
+        <article class="planner-card style-card"><div class="card-top"><span class="planner-icon">◇</span><span class="tag">YOUR PERSONAL STYLE</span></div><h3>Jewelry & Style</h3><p>Explore accessory combinations and occasion-ready style suggestions.</p><ul><li>Occasion-based combinations</li><li>Color and material ideas</li><li>Budget-conscious choices</li></ul><button class="card-link" data-planner="jewelry">Find my style <span>↗</span></button></article>
+      </div>
+    </section>
+    <section class="how-section" id="how"><div class="how-copy"><div class="eyebrow">SIMPLE BY DESIGN</div><h2>From “what if?”<br/><span class="gradient-text">to “let’s do it.”</span></h2><p>PocketSmart AI helps you break down an idea into steps you can actually use. Start with your goal, set your budget, and get a plan you can save and revisit.</p></div><div class="steps"><div class="step"><span>01</span><div><b>Choose a planner</b><p>Pick home, party, or jewelry and style.</p></div></div><div class="step"><span>02</span><div><b>Set your preferences</b><p>Tell us the occasion, style, and budget.</p></div></div><div class="step"><span>03</span><div><b>Get your plan</b><p>Generate a useful plan and keep it in your history.</p></div></div></div></section>
+    <section class="cta"><div><div class="eyebrow">YOUR NEXT IDEA STARTS HERE</div><h2>Plan more. Stress less.</h2><p>Create a free account to save your plans across sessions.</p></div><button class="btn btn-primary btn-large" id="ctaStart">Start planning <span>↗</span></button></section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">✦</span><span>PocketSmart <b>AI</b></span></a><span>Thoughtful plans for everyday life.</span><span>© <span id="year"></span> PocketSmart AI</span></footer>
+
+  <div class="modal-backdrop hidden" id="authModal">
+    <div class="modal"><button class="modal-close" id="closeAuth">×</button><div class="eyebrow">WELCOME TO POCKETSMART</div><h2 id="authTitle">Create your account</h2><p id="authSubtitle">Save your plans and pick up where you left off.</p>
+      <form id="authForm"><label>Name <input id="authName" autocomplete="name" placeholder="Your name" /></label><label>Email <input id="authEmail" type="email" required autocomplete="email" placeholder="you@example.com" /></label><label>Password <input id="authPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters" /></label><button class="btn btn-primary btn-full" id="authSubmit" type="submit">Create account</button></form><div class="modal-switch" id="authSwitch">Already have an account? <button id="switchAuth">Log in</button></div><p class="form-message" id="authMessage"></p>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="plannerModal">
+    <div class="modal planner-modal"><button class="modal-close" id="closePlanner">×</button><div class="eyebrow">YOUR PERSONAL PLAN</div><h2 id="plannerTitle">Home Interior Planner</h2><p id="plannerIntro">A few details help us make the plan useful.</p>
+      <form id="plannerForm"><input type="hidden" id="plannerType" value="home" /><label>What are you planning? <input id="goal" required placeholder="e.g. Small bedroom refresh" /></label><div class="two-fields"><label>Budget (INR) <input id="budget" type="number" min="0" value="5000" required /></label><label>Style / occasion <input id="preference" placeholder="e.g. Minimal, cozy" /></label></div><label>Extra details <textarea id="details" rows="3" placeholder="Room size, guest count, preferred colors, special needs…"></textarea></label><button class="btn btn-primary btn-full" type="submit" id="generateBtn">Generate my plan ✦</button></form><p class="form-message" id="plannerMessage"></p><div id="planResult" class="plan-result hidden"></div>
+    </div>
+  </div>
+  <div class="toast hidden" id="toast"></div>
+  <script src="./app.js"></script>
+</body>
+</html>

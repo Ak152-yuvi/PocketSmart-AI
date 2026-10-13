@@ -1,0 +1,12 @@
+name = "pocketsmart-ai-api"
+main = "index.js"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pocketsmart-ai-db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+[vars]
+# Set secrets with `npx wrangler secret put GEMINI_API_KEY`
+# JWT_SECRET and PASSWORD_PEPPER must also be secrets, not plain text.
