@@ -1,5 +1,3 @@
-# PocketSmart AI — Cloudflare starter
-
 A fresh starter for PocketSmart AI with a responsive frontend, API Worker, D1 database, registration/login, per-user saved plans, three planners, Gemini integration, and a demo fallback.
 
 ## Important before public launch
